@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎞 Welkom bij de Winc Filmzoeker !! 🎞</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="center-heading">Welkom bij de Winc Filmzoeker </h1>
+   <nav class="radio-btns">
+       
+    <label>
+        <input id="newMovies" class="filter" value="newMovies" name="movie" type="radio" />
+        <span>New movies from 2014 and newer</span>
+    </label>
+
+    <label>
+        <input id="Avenger" class="filter" value="Avenger" name="movie" type="radio" />
+        <span>Avenger</span>
+    </label>
+
+    <label>
+        <input id="X-Men" class="filter" value="X-Men" name="movie" type="radio" />
+        <span>X-Men</span>
+    </label>
+    
+    <label>
+        <input id="Princess" class="filter" value="Princess" name="movie" type="radio" />
+        <span>Princess</span>
+    </label>
+
+    <label>
+        <input id="Batman" class="filter" value="Batman" name="movie" type="radio" />
+        <span>Batman</span>
+    </label>
+
+    <label>
+        <input id="all" class="filter" value="all" name="movie" type="radio" />
+        <span>All</span>
+    </label>
+   
+    <label>
+        <input type="radio"  name="movie" id="searchByTitle">
+       <abbr title="Search by Title"><span>Search : </span></abbr> <!--  when hover on search span will give you this message "Search by Title" -->
+       
+        <input type="search" disabled name="" id="search" class="search">
+    </label>
+
+   </nav>
+    <section id="container" class="container"></section>
+    <script src="movies.js"></script> 
+    <script src="index.js"></script>
+</body>
+</html>

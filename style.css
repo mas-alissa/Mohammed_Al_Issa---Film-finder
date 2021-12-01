@@ -1,0 +1,56 @@
+body{
+    background-color: black;
+    color:white;
+
+}
+
+
+.center-heading{
+    text-align: center;
+    text-shadow: 0 0 2px white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.noMovie{
+    text-align: center;
+    margin-top:150px;
+    font-size: 30px;
+    color:gold;
+  
+}
+
+.radio-btns{
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+
+
+label{
+    padding:30px;
+}
+
+
+img{
+    margin:20px;
+}
+
+
+.flex-box{
+     display:flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.flex-box div{
+    text-align: center;
+}
+
+
+.search{
+    outline: none;
+    border-radius: 10px;
+}
+
+abbr{
+    text-decoration: none;
+}
