@@ -16,113 +16,101 @@ let fullArray = movies; // this is just to save movies from another js file to f
 
 
 
-
+//this is the correct way to use element 
 document.addEventListener("DOMContentLoaded", function () {
-
-
-    container.innerHTML = `<div class="flex-box">${fullArray.map(movie => `
-    <div>
-
-<a href='https://www.imdb.com/title/${movie.imdbID}'><img src=${movie.Poster} /></a>
-</div>
-    `)}</div>`;
-
+    const x = fullArray.map(item => {
+        const img = document.createElement("img");
+        img.src = item.Poster
+        const a = document.createElement("a");
+        a.appendChild(img);
+        a.target = "_blank"
+       a.href = `http://www.imdb.com/title/${item.imdbID}`
+        container.appendChild(a)
+    })
 });
-
-
 let filter = document.querySelectorAll(".filter")
-
 for (let i = 0; i < filter.length; i++) {
-
     filter[i].addEventListener("click", function () {
-
         search.disabled = true; // to disable search field
-
         switch (this.value) { // to check if the radio button value is one of types of search movies.
             case "newMovies":
                 container.innerHTML = "";
                 let newMoviesArray = fullArray.filter(movie => movie.Year >= 2014);
-
-                container.innerHTML = `<div class="flex-box">${newMoviesArray.map(movie => `
-                                              
-                                                 
-                                                 <div>
-                                              
-                                                <a href='https://www.imdb.com/title/${movie.imdbID}'><img src=${movie.Poster} /></a>
-                                                </div>
-                                                
-                                           
-                                                `)}</div>`
+               newMoviesArray.map(item => {
+                    const img = document.createElement("img");
+                    img.src = item.Poster
+                    const a = document.createElement("a");
+                    a.appendChild(img)
+                    a.target = "_blank";
+                    a.href = `http://www.imdb.com/title/${item.imdbID}`
+                    container.appendChild(a)
+                })
                 break;
             case "Avenger":
                 container.innerHTML = "";
                 let avengerArray = fullArray.filter(movie => movie.Title.includes("Avenger"));
-
-                container.innerHTML = `<div class="flex-box">${avengerArray.map(movie => `
-                                
-                                 <div>
-                              
-                                 <a href='https://www.imdb.com/title/${movie.imdbID}'><img src=${movie.Poster} /></a>
-                                 </div>
-                                
-                                 `)}</div>`;
+                avengerArray.map(item => {
+                    const img = document.createElement("img");
+                    img.src = item.Poster
+                    const a = document.createElement("a");
+                    a.appendChild(img)
+                    a.target = "_blank";
+                    a.href = `http://www.imdb.com/title/${item.imdbID}`
+                    container.appendChild(a)
+                })
                 break;
-
             case "X-Men":
                 container.innerHTML = "";
                 let XMenArray = fullArray.filter(movie => movie.Title.includes("X-Men"));
-
-                container.innerHTML = `<div class="flex-box">${XMenArray.map(movie => `
-                            
-                             
-                             <div>
-                        
-                             <a href='https://www.imdb.com/title/${movie.imdbID}'><img src=${movie.Poster} /></a>
-                             </div>
-                             
-                            
-                             `)}</div>`;
+                XMenArray.map(item => {
+                    const img = document.createElement("img");
+                    img.src = item.Poster
+                    const a = document.createElement("a");
+                    a.appendChild(img)
+                    a.target = "_blank";
+                    a.href = `http://www.imdb.com/title/${item.imdbID}`
+                    container.appendChild(a)
+                })
                 break;
             case "Princess":
                 container.innerHTML = "";
                 let princessArray = fullArray.filter(movie => movie.Title.includes("Princess"));
-
-                container.innerHTML = `<div class="flex-box">${princessArray.map(movie => `
-                                
-                                 <div>
-                           
-                                 <a href='https://www.imdb.com/title/${movie.imdbID}'><img src=${movie.Poster} /></a>
-                                 </div>
-                                
-                                 `)}</div>`;
+                princessArray.map(item => {
+                    const img = document.createElement("img");
+                    img.src = item.Poster
+                    const a = document.createElement("a");
+                    a.appendChild(img)
+                    a.target = "_blank";
+                    a.href = `http://www.imdb.com/title/${item.imdbID}`
+                    container.appendChild(a)
+                })
                 break;
             case "Batman":
                 container.innerHTML = "";
                 let batmanArray = fullArray.filter(movie => movie.Title.includes("Batman"));
-
-                container.innerHTML = `<div class="flex-box">${batmanArray.map(movie => `
-                                                    
-                                                     
-                                                     <div>
-                                                 
-                                                     <a href='https://www.imdb.com/title/${movie.imdbID}'><img src=${movie.Poster} /></a>
-                                                     </div>
-                                                    
-                                                     `)}</div>`;
+                batmanArray.map(item => {
+                    const img = document.createElement("img");
+                    img.src = item.Poster
+                    const a = document.createElement("a");
+                    a.appendChild(img)
+                    a.target = "_blank";
+                    a.href = `http://www.imdb.com/title/${item.imdbID}`
+                    container.appendChild(a)
+                })
                 break;
             default: container.innerHTML = "";
-                let allArray = fullArray.filter(movie => movie.Title.includes("all"));
 
-                container.innerHTML = `<div class="flex-box">${fullArray.map(movie => `
-                            
-                             <div>
-                             <h2>${movie.Title}</h2>
-                             <h4>${movie.Year}</h4>
-                             <h4>${movie.Type}</h4>
-                             <a href='https://www.imdb.com/title/${movie.imdbID}'><img src=${movie.Poster} /></a>
-                             </div>
-                            
-                             `)}</div>`;
+
+               fullArray.map(item => {
+                    
+                    const img = document.createElement("img");
+                    img.src = item.Poster
+                    const a = document.createElement("a");
+                    a.appendChild(img)
+                    a.target = "_blank";
+                    a.href = `http://www.imdb.com/title/${item.imdbID}`
+                    container.appendChild(a)
+                })           
         }
     })
 }
@@ -142,7 +130,7 @@ let search = document.getElementById("search");
 
 search.addEventListener("keyup", function (e) {
     if(e.key === "Enter"){
-
+        container.innerHTML = "";
    
     let filteredArray = fullArray.filter(item => item.Title.toUpperCase().indexOf(search.value.toUpperCase()) > -1)
 
@@ -150,16 +138,21 @@ search.addEventListener("keyup", function (e) {
     if (search.value.length > 0) {
 
 
-        container.innerHTML = `<div class="flex-box">${filteredArray.map(movie => `
+        filteredArray.map(item => {
                     
-                        <div>
-                   
-                        <a href='https://www.imdb.com/title/${movie.imdbID}'><img src=${movie.Poster} /></a>
-                        </div>
-                       
-                        `)}</div>`;
+            const img = document.createElement("img");
+            img.src = item.Poster
+            const a = document.createElement("a");
+            a.appendChild(img)
+            a.target = "_blank";
+            a.href = `http://www.imdb.com/title/${item.imdbID}`
+            container.appendChild(a)
+        }) 
     } else if(search.value.length == 0) {
-        container.innerHTML = "<div class='noMovie'>You must put name of the movie to search for it ...</div>"
+       const newDiv = document.createElement("div");
+       newDiv.classList.add("noMovie")
+       newDiv.innerHTML ="You must put name of the movie to search for it ..."
+       container.appendChild(newDiv) 
     } 
 }
 })
